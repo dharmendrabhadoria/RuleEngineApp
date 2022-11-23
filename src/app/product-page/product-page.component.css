@@ -1,0 +1,33 @@
+.mat-button{
+    background-color: rgb(129, 146, 247);
+    color: black;
+    margin-left: 10px;
+}
+.btn{
+    background-color: rgb(102, 62, 248);
+    color: black;
+    height: 35px;
+}
+mat-list::ng-deep { overflow: auto; }
+
+.example-viewport {
+    height: 200px;
+    /* width: 200px; */
+    /* border: 1px solid black; */
+    border: none;
+  }
+  
+  .example-item {
+    height: 50px;
+  }
+  
+
+  .pcard{
+    /* height: 300px; */
+    margin-bottom: 12px;
+  }
+
+  mat-nav-list {
+    max-height: 150px;
+    overflow: auto;
+  }

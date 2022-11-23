@@ -1,0 +1,22 @@
+[
+  {
+    "id":1,
+    "productCode": "ENP",
+    "productName": "PNB MetLife Endowment Savings Plan Plus"
+  },
+  {
+    "id":2,
+    "productCode": "FIP",
+    "productName": "PNB MetLife Family Income Protector Plus"
+  },
+  {
+    "id":3,
+    "productCode": "MGL",
+    "productName": "PNB MetLife Guaranteed Future Plan"
+  },
+  {
+    "id":4,
+    "productCode": "ASP",
+    "productName": "PNB Metlife Aajeevan Suraksha Plan"
+  }
+]  

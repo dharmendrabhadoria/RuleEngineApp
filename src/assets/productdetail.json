@@ -1,0 +1,100 @@
+[
+    {
+      "id":1,
+      "productCode": "ENP",
+      "productName": "PNB MetLife Endowment Savings Plan Plus",
+      "policyDetailsFields" :[
+        {"id":1 ,"name" :"RCD"},
+        {"id":2 ,"name" :"PTD"},
+        {"id":3 ,"name" :"SA"},
+        {"id":4 ,"name" :"PPT"},
+        {"id":5 ,"name" :"Term"},
+        {"id":6 ,"name" :"Installment Premium"},
+        {"id":7 ,"name" :"Total Bonus Accrued"},
+        {"id":8 ,"name" :"Total Premium Paid"},
+        {"id":9 ,"name" :"Frequency"},
+        {"id":10 ,"name" :"Benefit Type"}
+      ],
+      "policyBenefitFields" :[
+        {"id":1 ,"name" :"Surrender Month",
+        "FieldType":"Date","Purpose":"Information","Formula":""},
+        {"id":2 ,"name" :"No.of Modal Prem Paid",
+        "FieldType":"DateDiff","Purpose":"Calculation","Formula":""},
+        {"id":3 ,"name" :"Total Premium Paid",
+        "FieldType":"Number","Purpose":"Payable","Formula":""},
+        {"id":4 ,"name" :"Total Accured Bonus",
+        "FieldType":"Percenatge","Purpose":"Calculation","Formula":""},
+        {"id":5 ,"name" :"GSV Bonus",
+        "FieldType":"Number","Purpose":"Payable","Formula":""},
+        {"id":6 ,"name" :"GSV as % total prem",
+        "FieldType":"Number","Purpose":"Payable","Formula":""},
+        {"id":7 ,"name" :"GSV",
+        "FieldType":"Number","Purpose":"Payable","Formula":""},
+        {"id":8 ,"name" :"SSV Factor",
+        "FieldType":"Number","Purpose":"Payable","Formula":""}
+      ]
+    },
+    {
+      "id":2,
+      "productCode": "FIP",
+      "productName": "PNB MetLife Family Income Protector Plus",
+      "policyDetailsFields" :[
+        {"id":1 ,"name" :"RCD"},
+        {"id":2 ,"name" :"PTD"},
+        {"id":3 ,"name" :"SA"},
+        {"id":4 ,"name" :"PPT"},
+        {"id":5 ,"name" :"Term"},
+        {"id":6 ,"name" :"Installment Premium"}
+      ],
+      "policyBenefitFields" :[
+        {"id":1 ,"name" :"Surrender Month",
+        "FieldType":"Date","Purpose":"Information","Formula":""},
+        {"id":2 ,"name" :"No.of Modal Prem Paid",
+        "FieldType":"DateDiff","Purpose":"Calculation","Formula":""},
+        {"id":3 ,"name" :"Total Premium Paid",
+        "FieldType":"Number","Purpose":"Payable","Formula":""},
+        {"id":4 ,"name" :"Total Accured Bonus",
+        "FieldType":"Percenatge","Purpose":"Calculation","Formula":""}
+      ]
+    },
+    {
+      "id":3,
+      "productCode": "MGL",
+      "productName": "PNB MetLife Guaranteed Future Plan",
+      "policyDetailsFields" :[
+        {"id":1 ,"name" :"RCD"},
+        {"id":2 ,"name" :"PTD"},
+        {"id":7 ,"name" :"Total Bonus Accrued"},
+        {"id":8 ,"name" :"Total Premium Paid"},
+        {"id":9 ,"name" :"Frequency"},
+        {"id":10 ,"name" :"Benefit Type"}
+      ],
+      "policyBenefitFields" :[
+       
+        {"id":5 ,"name" :"GSV Bonus",
+        "FieldType":"Number","Purpose":"Payable","Formula":""},
+        {"id":6 ,"name" :"GSV as % total prem",
+        "FieldType":"Number","Purpose":"Payable","Formula":""},
+        {"id":7 ,"name" :"GSV",
+        "FieldType":"Number","Purpose":"Payable","Formula":""},
+        {"id":8 ,"name" :"SSV Factor",
+        "FieldType":"Number","Purpose":"Payable","Formula":""}
+      ]
+    },
+    {
+      "id":4,
+      "productCode": "ASP",
+      "productName": "PNB Metlife Aajeevan Suraksha Plan",
+      "policyDetailsFields" :[
+        {"id":2 ,"name" :"PTD"},
+        {"id":9 ,"name" :"Frequency"},
+        {"id":10 ,"name" :"Benefit Type"}
+      ],
+      "policyBenefitFields" :[
+        {"id":7 ,"name" :"GSV",
+        "FieldType":"Number","Purpose":"Payable","Formula":""},
+        {"id":8 ,"name" :"SSV Factor",
+        "FieldType":"Number","Purpose":"Payable","Formula":""}
+      ]
+    }
+  ]  

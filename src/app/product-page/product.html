@@ -1,0 +1,84 @@
+<h1 class="some">Product Page</h1>
+<mat-tab-group>
+    <mat-tab label="Facts"> 
+    <div style="padding:25px;">
+        <div>           
+            <mat-label style="padding-right:48px;">Select Product  :</mat-label>
+            <mat-form-field style="width:50%;">
+                <select (change)="onProductChange(p.value)" #p matNativeControl required>
+                    <option *ngFor="let p of Product"  [value]="p.id"> {{p.productName}}</option>
+                </select>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-label style="padding-right:55px;">Select Fields    :</mat-label>          
+            <mat-form-field style="width:50%;">
+                <!--<mat-select placeholder="Toppings" [formControl]="toppings" multiple [(ngModel)]="selected"></mat-select> -->
+                <mat-select [formControl]="toppings" multiple  placeholder="Policy Details Fields">
+                    <!--[(ngModel)]="selected" <mat-option *ngFor="let f of Fields; let i =index" [value]="f.ID">
+                        <mat-checkbox [checked]="selected === i" (change)="onChange(f.Name);selected = i"> {{f.Name}}</mat-checkbox>
+                    </mat-option> -->
+                    <mat-option *ngFor="let f of Fields; let i =index" [value]="f.id">{{f.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <button mat-button color="primary">ADD</button>
+
+            
+        </div>
+        <div>
+            <mat-card>
+                <div>
+                    <mat-label>Select Benefits Fields    : </mat-label>
+                    <mat-form-field style="width:50%;">
+                        <mat-select  placeholder="Policy Benefits Fields">
+                            <mat-option *ngFor="let f of Benefits; let i =index" [value]="f.ID">{{f.Name}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-label style="padding-right:75px;">Field Type :</mat-label>
+                    <mat-form-field>
+                        <!-- <mat-label>Enter </mat-label> -->
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-label style="padding-right:16px;">Purpose of the field :</mat-label>
+                    <mat-form-field>
+                        <!-- <mat-label>Enter </mat-label> -->
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-label style="padding-right:87px;">Formula :</mat-label>
+                    <mat-form-field>
+                        <!-- <mat-label>Enter </mat-label> -->
+                        <input matInput>
+                    </mat-form-field>
+                    <button mat-button (click)="openDialog()">Derive Formula</button>
+
+                </div>
+                
+            </mat-card>
+        </div>
+    </div>
+    </mat-tab>
+    <mat-tab label="Decision"> Content 2 </mat-tab>
+    <mat-tab label="Generate"> Content 3 </mat-tab>
+  </mat-tab-group>
+
+<!--   
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        One of three columns
+      </div>
+      <div class="col-sm">
+        One of three columns
+      </div>
+      <div class="col-sm">
+        One of three columns
+      </div>
+    </div>
+  </div> -->

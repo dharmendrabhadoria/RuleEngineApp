@@ -1,0 +1,19 @@
+<p>fieldmaster works!</p>
+
+<form class="example-form" [formGroup]="form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Filed Name</mat-label>
+      <input matInput placeholder="Filed Name" id="txtFieldName" formControlName="txtFieldName">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+        <mat-label>Type</mat-label>
+        <input matInput placeholder="Type" id="txtType" formControlName="txtType">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Description</mat-label>
+        <input matInput placeholder="Description" id="txtDescription" formControlName="txtDescription">
+      </mat-form-field>
+      <button mat-button color="primary" (click)="SaveFieldMaster()">Primary</button>
+  </form>

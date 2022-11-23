@@ -1,0 +1,34 @@
+.lb{
+    font-size: 30px;
+    padding: 8px;
+}
+
+.card{
+    height: 230px;
+}
+
+mat-list::ng-deep { overflow: auto; }
+
+.example-viewport {
+    height: 200px;
+    width: 200px;
+    /* border: 1px solid black; */
+    border: none;
+  }
+  
+  .example-item {
+    height: 50px;
+  }
+  
+
+
+  .button-close {
+    justify-self: right;
+    font-size: 20px;
+    border: none;
+    height: 30px;
+    background-color: #FFFFFF;
+    outline: none;
+    color: #c04747;
+    /* text-align: right; */
+}

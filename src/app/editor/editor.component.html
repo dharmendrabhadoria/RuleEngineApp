@@ -1,0 +1,49 @@
+<mat-card>
+    <mat-card-title>
+        Expression editor
+        <div style="text-align:right;">
+        <button class="button-close" (click)="onclose()" mat-button [mat-dialog-close]="true">X</button>
+       </div>
+    </mat-card-title>
+   
+
+    <mat-card-content style="margin:0px;">
+        <mat-form-field style="width:100%;" class="example-full-width" appearance="fill">
+            <textarea matInput #myinput [ngModel]="expression" (ngModelChange)="modelChangeFn($event)">{{expression}}</textarea>
+          </mat-form-field>
+    </mat-card-content>
+    <span>
+      <ng-container *ngFor="let op of Operators">
+        <label (click)="OpClick(op)" class="lb">{{op}}</label>
+      </ng-container>
+    </span>
+    <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <mat-card class="card">
+                  <mat-nav-list>
+                    <ng-container *ngFor="let op of Operations" class="example-item">
+                        <a mat-list-item href="javascript:void(0)" (click)="OprClick(op)"> {{op}} </a> 
+                    </ng-container>
+                </mat-nav-list>
+            </mat-card>
+          </div>
+          <div class="col-sm">
+            <mat-card class="card">
+                    <mat-nav-list >
+                        <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+                        <ng-container *ngFor="let link of fields" class="example-item">
+                            <a mat-list-item href="javascript:void(0)" (dblclick)="doubleClick(link.Name)" > {{ link.Name }} </a>
+                        </ng-container>
+                    </cdk-virtual-scroll-viewport>
+                    </mat-nav-list>
+            </mat-card>
+          </div>
+          <div class="col-sm">
+            <mat-card class="card">
+                <label >content of field</label>
+            </mat-card>
+          </div>
+        </div>
+      </div> 
+</mat-card>

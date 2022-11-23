@@ -1,0 +1,72 @@
+<h1 class="some">Formula Creation</h1>
+<!-- <input type="number"[(ngModel)]="price" placeholder="0.00"> -->
+<mat-tab-group>
+    <mat-tab label="Facts"> 
+    <div style="padding:25px;">
+        <div>           
+            <mat-label style="padding-right:48px;">Select Product  :</mat-label>
+            <mat-form-field style="width:50%;">
+                <!-- <select placeholder="Policy Details Fields" (change)="onProductChange(p.value)" #p matNativeControl required>
+                    <option *ngFor="let p of Product"  [value]="p.id"> {{p.productName}}</option>
+                </select> -->
+                <mat-select  placeholder="Select product" (selectionChange)="onProductChange($event.value,$event)">
+                    <mat-option *ngFor="let p of Product let i =index" [value]="p.ProductID" >{{p.ProductName}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div>
+            <!-- <mat-label style="padding-right:20px;">List of Policy Fields    :</mat-label>          
+            <mat-form-field style="width:50%;">
+                <mat-select  placeholder="Policy Details Fields">
+                    <mat-option *ngFor="let f of Fields; let i =index" [value]="f.id">{{f.name}}</mat-option>
+                </mat-select>
+            </mat-form-field> -->
+            <mat-card class="pcard">
+              <mat-label style="padding-right:20px;">List of Policy  Fields    :</mat-label> 
+              <mat-nav-list>
+                  <mat-list-item *ngFor="let f of Fields; let i =index">
+                      <p matLine>Name: {{f.name}}</p>
+                  </mat-list-item>
+                </mat-nav-list>
+              
+          </mat-card>
+            
+        </div>
+        <div>
+            <mat-card>
+                <mat-label style="padding-right:20px;">List of Policy Benefits Fields    :</mat-label> 
+                <mat-nav-list>
+                    <mat-list-item *ngFor="let f of Benefits; let i =index">
+                        <h3 matLine>Name: {{f.name}}</h3>
+                        <p matLine>FieldType: {{f.FieldType}}</p>
+                        <p matLine>Purpose: {{f.Purpose}}</p>
+                        <p matLine>Formula: {{f.Formula}}</p>
+                       <mat-action-list>
+                        <button mat-list-item class="btn" (click)="openDialog()"> Generate </button>
+                      </mat-action-list>
+                      
+                    </mat-list-item>
+                  </mat-nav-list>
+                
+            </mat-card>
+        </div>
+    </div>
+    </mat-tab>
+    <mat-tab label="Decision"> Content 2 </mat-tab>
+    <mat-tab label="Generate"> Content 3 </mat-tab>
+  </mat-tab-group>
+
+<!--   
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        One of three columns
+      </div>
+      <div class="col-sm">
+        One of three columns
+      </div>
+      <div class="col-sm">
+        One of three columns
+      </div>
+    </div>
+  </div> -->
