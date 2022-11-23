@@ -1,25 +1,62 @@
-<p>fieldmaster works!</p>
 
-<form class="example-form" [formGroup]="form">
-    <mat-form-field class="example-full-width">
+
+<form class="" [formGroup]="form">
+
+  <div class="row">
+    <div class="col-sm-6">
+      <mat-label style="padding-right:48px;">Filed Name:</mat-label>
+  <mat-form-field style="width:50%;">
+    <input matInput placeholder="Filed Name" id="txtFieldName" formControlName="txtFieldName">
+  </mat-form-field>
+      </div>
+
+
+      <div class="col-sm-6">
+        <mat-label style="padding-right:50px;">Type </mat-label>
+      
+        <mat-form-field style="width:50%;">
+         
+          <input matInput placeholder="Type" id="txtType" formControlName="txtType">
+        </mat-form-field>
+      </div>
+
+      <div class="col-sm-6">
+        <mat-label style="padding-right:50px;">Description </mat-label>
+      
+        <mat-form-field style="width:50%;">
+         
+          <input matInput placeholder="Description" id="txtDescription" formControlName="txtDescription">
+      
+        </mat-form-field>
+      </div>
+
+      <div class="col-sm-6">
+        <button mat-button class="btn btn-primary" (click)="SaveFieldMaster()">Save</button>
+      </div>
+
+
+  </div>
+
+    <!-- <mat-form-field class="example-full-width">
       <mat-label>Filed Name</mat-label>
       <input matInput placeholder="Filed Name" id="txtFieldName" formControlName="txtFieldName">
-    </mat-form-field>
+    </mat-form-field> -->
   
-    <mat-form-field class="example-full-width">
+    <!-- <mat-form-field class="example-full-width">
         <mat-label>Type</mat-label>
         <input matInput placeholder="Type" id="txtType" formControlName="txtType">
-      </mat-form-field>
+      </mat-form-field> -->
 
-      <mat-form-field class="example-full-width">
+      <!-- <mat-form-field class="example-full-width">
         <mat-label>Description</mat-label>
         <input matInput placeholder="Description" id="txtDescription" formControlName="txtDescription">
-      </mat-form-field>
-      <button mat-button color="primary" (click)="SaveFieldMaster()">Primary</button>
+      
+      </mat-form-field> -->
+      <!-- <button mat-button color="primary" (click)="SaveFieldMaster()">Primary</button> -->
  
      
-
-      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <div class="scrollinfo">
+      <table mat-table [dataSource]="dataSource" class="table table-bordered" >
 
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
@@ -66,7 +103,7 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
- 
+      </div>
     </form>
    
     

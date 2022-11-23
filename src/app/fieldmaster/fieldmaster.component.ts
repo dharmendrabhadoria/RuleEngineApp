@@ -45,6 +45,7 @@ displayedColumns:string[]=['FieldID','FieldName','type','Description','CreatedBy
     this.webApiService.InsertFieldMaster(strtxtFieldName,strtxtType,strtxtDescription,strCreatedBy).subscribe((result:any) =>{
       debugger;
     alert(result[0].Msg);
+    this.LoadFieldMaster();
     });;
    
 

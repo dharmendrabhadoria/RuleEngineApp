@@ -1,0 +1,222 @@
+
+
+<form  [formGroup]="form">
+   
+    <div class="row">
+        <div class="col-sm-6">
+
+            <mat-label style="padding-right:48px;">Select Product  :</mat-label>
+            <mat-form-field style="width:50%;">
+                <!-- <select placeholder="Policy Details Fields" (change)="onProductChange(p.value)" #p matNativeControl required>
+                    <option *ngFor="let p of Product"  [value]="p.id"> {{p.productName}}</option>
+                </select> -->
+                <mat-select  placeholder="Select product" #ddlProduct  formControlName="ddlProduct">
+                    <mat-option *ngFor="let i of ProductArr" value={{i.ProductID}}>{{i.ProductName}}</mat-option>
+                </mat-select>   
+               
+            </mat-form-field>
+        </div>
+
+        <div class="col-sm-2">
+            <button  (click)="onproductField()"  class="btn btn-primary">Add Product</button> 
+      
+        </div>
+
+        <div class="col-sm-2">
+            <button  (click)="onBenificiaryField()" class="btn btn-primary">Add Benificiary</button>  
+     
+              </div>
+
+        <div class="col-sm-2">
+            
+            <input type="button" value="Save" (click)="SaveInfo()" class="btn btn-primary">
+        </div>
+    </div>
+    
+
+
+
+
+
+    
+<div class="row">
+    
+    <div class="col-sm-3">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <td colspan="2" scope="col">
+    
+              Product Field Details
+            </td>
+          </tr>
+          <tr>
+            <td scope="col">ProductID</td>
+            <td scope="col">ProductName</td>
+          </tr>
+        </thead>
+             <tbody>
+              <tr *ngFor="let item of SelectProductMappingInfo"><td scope="col">{{item.FieldID}}</td><td scope="col">{{item.FieldName}}</td></tr>
+            </tbody>
+     </table>
+    </div>
+   <div class="col-sm-3">
+  
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <td colspan="2" scope="col">
+  
+            <span>Benificiary Field Details</span>
+          </td>
+        </tr>
+        <tr>
+          <td scope="col">BenificiaryID</td>
+          <td scope="col">BenificiaryName</td>
+        </tr>
+      </thead>
+           <tbody>
+            <tr *ngFor="let item of SelectBenificiaryMappingInfo"><td scope="col">{{item.BenificiaryID}}</td><td scope="col">{{item.BenificiaryName}}</td></tr>
+          </tbody>
+   </table>
+   </div>
+   
+  </div>
+</form>
+
+
+
+<!-- The Modal product Filed Details-->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content1">
+      <span class="close" (click)="close()">x</span>
+      <div class="modal-header" >
+        <h4  id="modal-basic-title" >Product Fields Info</h4>
+      </div>
+      <div class="modal-body scrollinfo" id="dvid">
+          <!-- <div class="vas-obs vas-selected" *ngFor="let vas of ProductFieldArr; let i=index;"> -->
+              <!-- <div class="vas-obs-text checkbox-container">
+                 
+                <input type="checkbox"  id="{{vas.ProductFieldID}}" name="vas_123" value="{{vas.ProductFieldName}}"> {{vas.ProductFieldName}}
+              </div> -->
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                   <td style="display:none">Product Field Id</td>
+
+                   <td>Product Field Name</td>
+                   <td>Product Field Type</td>
+                   <td>Product Field Description</td>
+
+                   <td>CreatedBy</td>
+                   <td>Created Date</td>
+                  </tr>
+                 
+                </thead>
+                     <tbody>
+                      <tr *ngFor="let vas of ProductFieldArr; let i=index;">
+                        <td style="display:none">
+                          {{vas.ProductFieldID}}
+                          
+                        </td>
+                        <td>
+                          <input type="checkbox"  id="{{vas.ProductFieldID}}" name="vas_123" value="{{vas.ProductFieldName}}"> {{vas.ProductFieldName}}
+                        
+
+                        </td>
+
+                        <td>{{vas.Type}}</td>
+
+                        <td>{{vas.Decription}}</td>
+
+                        <td>{{vas.CreatedBy}}</td>
+                        <td>{{vas.CreatedDate}}</td>
+                      
+                      </tr>
+                    </tbody>
+             </table>
+
+
+
+
+
+            <!-- </div>  -->
+      </div>
+      <div class="modal-footer" >
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="ProductmappingFn()">Add</button>
+  
+        <button type="button" class="btn btn-info" (click)="close();">Cancel</button>
+      </div>
+    </div>
+  
+  </div>
+  <!-- The Modal product Filed Details end  -->
+  
+  
+  
+  <!-- Benificiary Filed Model Start-->
+   
+  <div id="myModalbf" class="modal">
+  
+    <!-- Modal content -->
+    <div class="modal-content1">
+      <span class="close" (click)="this.close2()">x</span>
+      <div class="modal-header" >
+        <h4  id="modal-basic-title" >Benificiary Fields Info</h4>
+      </div>
+      <div class="modal-body scrollinfo" id="dvid2">
+
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+             <td style="display:none">Benificiary Field Id</td>
+
+             <td>Benificiary Field Name</td>
+             <td>Benificiary Field Type</td>
+             <td>Benificiary Field Description</td>
+             <td>Benificiary formulatodrive</td>
+             <td>CreatedBy</td>
+             <td>Created Date</td>
+            </tr>
+           
+          </thead>
+               <tbody>
+                <tr *ngFor="let vas of BenificiaryArr; let i=index;">
+                  <td style="display:none">
+                    {{vas.ProductBenificiaryID}}
+                   
+                  </td>
+                  <td>
+                    <input type="checkbox"  id="{{vas.ProductBenificiaryID}}" name="vas_0001" value="{{vas.ProductBenificiaryName}}"> {{vas.ProductBenificiaryName}}
+           
+                  </td>
+
+                  <td>{{vas.Type}}</td>
+
+                  <td>{{vas.Decription}}</td>
+                  <td>{{vas.FormulatoDrive}}</td>
+
+                  <td>{{vas.CreatedBy}}</td>
+                  <td>{{vas.CreatedDate}}</td>
+                
+                </tr>
+              </tbody>
+       </table>
+          <!-- <div class="vas-obs vas-selected" *ngFor="let vas of BenificiaryArr; let i=index;">
+              <div class="vas-obs-text checkbox-container">
+                 
+                <input type="checkbox"  id="{{vas.ProductBenificiaryID}}" name="vas_0001" value="{{vas.ProductBenificiaryName}}"> {{vas.ProductBenificiaryName}}
+              </div>
+            </div>  -->
+      </div>
+      <div class="modal-footer" >
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="BenificiarymappingFn()">Add</button>
+    
+        <button type="button" class="btn btn-info" (click)="this.close2();">Cancel</button>
+      </div>
+    </div>
+  
+  </div>
+  <!-- Benificiary Field Model End-->

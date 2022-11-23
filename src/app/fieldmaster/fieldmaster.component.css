@@ -50,7 +50,17 @@ html, body {
    box-sizing: border-box;
    -webkit-overflow-scrolling: touch;
 }
-
+.scrollinfo{
+  margin:4px, 4px;
+  padding:4px;
+  /* background-color: green; */
+  width: 100%;
+  height: 300px;
+  overflow-x: auto;
+  overflow-y: auto;
+  text-align:justify;
+}
+/* 
 
 .demo-table {
   width: 100%;
@@ -91,4 +101,4 @@ html, body {
   width: 32px;
   text-align: center;
   font-weight: bold;
-}
+} */

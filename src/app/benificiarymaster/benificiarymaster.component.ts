@@ -33,6 +33,7 @@ export class BenificiarymasterComponent implements OnInit {
     this.webApiService.insertBenificiaryFieldMaster(strtxtBenificiaryFieldName,strtxtBenificiaryType,strtxtBenificiaryFieldPurpose,strtxtBenificiaryFieldFormula,strCreatedBy).subscribe((result:any) =>{
       debugger;
     alert(result[0].Msg);
+    this.LoadBenificiaryMaster();
     });;
 
   }

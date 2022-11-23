@@ -36,4 +36,8 @@ export class AppComponent {
   BenificiaryFieldMaster(){
     this.route.navigate(['benificiarymaster'])
   }
+
+  ProductMap(){
+    this.route.navigate(['productmap'])
+  }
 }

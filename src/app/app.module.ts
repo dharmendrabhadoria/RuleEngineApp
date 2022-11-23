@@ -17,6 +17,7 @@ import { FieldmasterComponent } from './fieldmaster/fieldmaster.component';
 import { BenificiarymasterComponent } from './benificiarymaster/benificiarymaster.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { ProductmapComponent } from './productmap/productmap.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {MatButtonModule} from '@angular/material/button';
     EditorComponent,
     ProductmapinfoComponent,
     FieldmasterComponent,
-    BenificiarymasterComponent
+    BenificiarymasterComponent,
+    ProductmapComponent
    
   ],
   imports: [

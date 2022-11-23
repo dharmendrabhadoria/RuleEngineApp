@@ -1,30 +1,44 @@
-<p>benificiarymaster works!</p>
-
-
-<form class="example-form" [formGroup]="form">
-    <mat-form-field class="example-full-width">
-      <mat-label>Benificiary Name</mat-label>
+<form class="" [formGroup]="form"> 
+<div class="row">
+<div class="col-sm-6">
+  <mat-label style="padding-right:48px;">Benificiary Name :</mat-label>
+  <mat-form-field style="width:50%;">
+    
       <input matInput placeholder="Benificiary Name" id="txtBenificiaryFieldName" formControlName="txtBenificiaryFieldName">
-    </mat-form-field>
-  
-    <mat-form-field class="example-full-width">
-        <mat-label>Benificiary Type </mat-label>
-        <input matInput placeholder="Benificiary Type" id="txtBenificiaryType" formControlName="txtBenificiaryType">
-      </mat-form-field>
+      
+  </mat-form-field>
+</div>
+<div class="col-sm-6">
+  <mat-label style="padding-right:50px;">Benificiary Type </mat-label>
 
-      <mat-form-field class="example-full-width">
-        <mat-label>Benificiary Purpose</mat-label>
-        <input matInput placeholder="Benificiary Purpose" id="txtBenificiaryFieldPurpose" formControlName="txtBenificiaryFieldPurpose">
-      </mat-form-field>
+  <mat-form-field style="width:50%;">
+   
+    <input matInput placeholder="Benificiary Type" id="txtBenificiaryType" formControlName="txtBenificiaryType">
+  </mat-form-field>
+</div>
 
-      <mat-form-field class="example-full-width">
-        <mat-label>Benificiary Formula to Drive</mat-label>
-        <input matInput placeholder="Benificiary Formula to Drive" id="txtBenificiaryFieldFormula" formControlName="txtBenificiaryFieldFormula">
-      </mat-form-field>
-      <button mat-button color="primary" (click)="SaveBenificiaryFieldMaster()">Primary</button>
+
+<div style="width: 50%; float: left;">
+  <mat-label style="padding-right:50px;">Benificiary Purpose</mat-label>
+  <mat-form-field style="width:50%;">
+   
+    <input matInput placeholder="Benificiary Purpose" id="txtBenificiaryFieldPurpose" formControlName="txtBenificiaryFieldPurpose">
+  </mat-form-field>
+</div>
+
+<div style="width: 50%; float: left;">
+  <mat-label style="padding-right:50px;">Benificiary Formula to Drive</mat-label>
+  <mat-form-field style="width:50%;">
+       
+    <input matInput placeholder="Benificiary Formula to Drive" id="txtBenificiaryFieldFormula" formControlName="txtBenificiaryFieldFormula">
+  </mat-form-field>
+</div>
+
+</div>
+      <button mat-button class="btn btn-primary" (click)="SaveBenificiaryFieldMaster()">Save</button>
  
-     
-      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+     <div class="scrollinfo">
+      <table mat-table [dataSource]="dataSource" class="table table-bordered">
 
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
@@ -76,4 +90,5 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
+    </div>
  

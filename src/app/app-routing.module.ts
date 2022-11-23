@@ -4,6 +4,7 @@ import { BenificiarymasterComponent } from './benificiarymaster/benificiarymaste
 import { EditorComponent } from './editor/editor.component';
 import { FieldmasterComponent } from './fieldmaster/fieldmaster.component';
 import { ProductPageComponent } from './product-page/product-page.component';
+import { ProductmapComponent } from './productmap/productmap.component';
 import { ProductmapinfoComponent } from './productmapinfo/productmapinfo.component';
 
 // const routes: Routes = [];
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'editor', component: EditorComponent},
   {path:"productmapinfo",component:ProductmapinfoComponent},
   {path:"fieldmaster",component:FieldmasterComponent},
-  {path:"benificiarymaster",component:BenificiarymasterComponent}
+  {path:"benificiarymaster",component:BenificiarymasterComponent},
+  {path:"productmap",component:ProductmapComponent}
 ];
 
 @NgModule({
