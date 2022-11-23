@@ -10,6 +10,29 @@ export class DataserviceService {
 
   constructor(private httpClient: HttpClient) { }
 
+  public LoadBenificiaryMaster(){
+
+    return  this.httpClient.get(environment.apiURL+"LoadBenificiaryMaster");
+      }
+public LoadFieldMaster(){
+
+return  this.httpClient.get(environment.apiURL+"LoadFieldMaster");
+  }
+public insertBenificiaryFieldMaster(strtxtBenificiaryFieldName:any,strtxtBenificiaryType:any,strtxtBenificiaryFieldPurpose:any,strtxtBenificiaryFieldFormula:any,strCreatedBy:any){
+  return  this.httpClient.get(environment.apiURL+"insertBenificiaryFieldMaster?strtxtBenificiaryFieldName="+strtxtBenificiaryFieldName+
+  "&strtxtBenificiaryType="+
+  strtxtBenificiaryType+"&strtxtBenificiaryFieldPurpose="+
+  strtxtBenificiaryFieldPurpose+"&strtxtBenificiaryFieldFormula="+strtxtBenificiaryFieldFormula+"&strCreatedBy="+strCreatedBy);
+}
+
+
+  public InsertFieldMaster(strtxtFieldName:any,strtxtType:any,
+    strtxtDescription:any,strCreatedBy:any){
+    return  this.httpClient.get(environment.apiURL+"InsertFieldMaster?strtxtFieldName="+strtxtFieldName+"&strtxtType="+
+    strtxtType+"&strtxtDescription="+
+    strtxtDescription+"&strCreatedBy="+strCreatedBy);
+  }
+
   public GetRulesProductInfo(ProductID:any){
     return  this.httpClient.get(environment.apiURL+"fetchRuleCreationDataOnProductID?ProductID="+ProductID)
   }

@@ -1,1 +1,79 @@
 <p>benificiarymaster works!</p>
+
+
+<form class="example-form" [formGroup]="form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Benificiary Name</mat-label>
+      <input matInput placeholder="Benificiary Name" id="txtBenificiaryFieldName" formControlName="txtBenificiaryFieldName">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+        <mat-label>Benificiary Type </mat-label>
+        <input matInput placeholder="Benificiary Type" id="txtBenificiaryType" formControlName="txtBenificiaryType">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Benificiary Purpose</mat-label>
+        <input matInput placeholder="Benificiary Purpose" id="txtBenificiaryFieldPurpose" formControlName="txtBenificiaryFieldPurpose">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Benificiary Formula to Drive</mat-label>
+        <input matInput placeholder="Benificiary Formula to Drive" id="txtBenificiaryFieldFormula" formControlName="txtBenificiaryFieldFormula">
+      </mat-form-field>
+      <button mat-button color="primary" (click)="SaveBenificiaryFieldMaster()">Primary</button>
+ 
+     
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="BenificiaryID">
+          <th mat-header-cell *matHeaderCellDef> BenificiaryID </th>
+          <td mat-cell *matCellDef="let element"> {{element.BenificiaryID}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="BenificiaryName">
+          <th mat-header-cell *matHeaderCellDef> BenificiaryName </th>
+          <td mat-cell *matCellDef="let element"> {{element.BenificiaryName}} </td>
+        </ng-container>
+      
+
+
+        <ng-container matColumnDef="FieldType">
+          <th mat-header-cell *matHeaderCellDef> FieldType </th>
+          <td mat-cell *matCellDef="let element"> {{element.FieldType}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="FieldPurpose">
+          <th mat-header-cell *matHeaderCellDef> FieldPurpose </th>
+          <td mat-cell *matCellDef="let element"> {{element.FieldPurpose}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="FormulaToDriveData">
+          <th mat-header-cell *matHeaderCellDef> FormulaToDriveData </th>
+          <td mat-cell *matCellDef="let element"> {{element.FormulaToDriveData}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="CreatedBy">
+          <th mat-header-cell *matHeaderCellDef> CreatedBy </th>
+          <td mat-cell *matCellDef="let element"> {{element.CreatedBy}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="CreatedDate">
+          <th mat-header-cell *matHeaderCellDef> CreatedDate </th>
+          <td mat-cell *matCellDef="let element"> {{element.CreatedDate}} </td>
+        </ng-container>
+        <!-- Symbol Column -->
+        
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+ 
