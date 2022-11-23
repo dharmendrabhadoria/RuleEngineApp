@@ -18,11 +18,77 @@
             
             <mat-card class="pcard">
               <mat-label style="padding-right:20px;">List of Policy  Fields    :</mat-label> 
-              <mat-nav-list>
+              <!-- <mat-nav-list>
                   <mat-list-item *ngFor="let f of Fields; let i =index">
                       <p matLine>Name: {{f.name}}</p>
                   </mat-list-item>
-                </mat-nav-list>
+                </mat-nav-list> -->
+
+
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                     <td style="display:none">PFMID</td>
+        
+                     <td style="display:none">ProductID</td>
+                     <td style="display:none">id</td>
+                     <td>ProductName</td>
+                     <td>Field Name</td>
+                     <td>type</td>
+                     <td>Description</td>
+                     <td>CreatedBy</td>
+                     <td>Created Date</td>
+                    </tr>
+                   
+                  </thead>
+                       <tbody>
+                        <tr *ngFor="let vas of Fields; let i=index;">
+                          <td style="display:none">
+                            {{vas.PFMID}}
+                           
+                          </td>
+
+                          <td style="display:none">
+                            {{vas.ProductID}}
+                           
+                          </td>
+                          <td style="display:none">
+                            {{vas.id}}
+                           
+                          </td>
+
+                          <td>
+                            {{vas.ProductName}}
+                           
+                          </td>
+
+                          <td>
+                            {{vas.name}}
+                           
+                          </td>
+                          <td>
+                            {{vas.type}}
+                           
+                          </td>
+
+                          <td>
+                            {{vas.Description}}
+                           
+                          </td>
+
+                          <td>
+                            {{vas.CreatedBy}}
+                           
+                          </td>
+
+                          <td>
+                            {{vas.CreatedDate}}
+                           
+                          </td>
+                         
+                        </tr>
+                      </tbody>
+               </table>
               
           </mat-card>
             
