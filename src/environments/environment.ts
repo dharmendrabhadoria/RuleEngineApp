@@ -4,7 +4,11 @@
 
 export const environment = {
   production: false,
-  apiURL:"http://localhost:65164/api/FieldMapping/"
+  apiURL:"http://localhost:65164/api/FieldMapping/",
+  FieldStr:"Fields",
+  FunctionsStr:"Functions",
+  LogicalStr:"Logical"
+
 };
 
 /*

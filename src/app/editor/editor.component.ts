@@ -9,9 +9,11 @@ import { DataserviceService } from '../services/dataservice.service';
   styleUrls: ['./editor.component.css']
 })
 export class EditorComponent implements OnInit {
+  form!: FormGroup;submitted = false;
   fields:any;
   Operations:any;
   Operators:any=[];
+  expression: any ="";
   constructor(private webApiService:DataserviceService,private fb: FormBuilder,private Router:Router,private renderer:Renderer2) {
    
   }
@@ -39,7 +41,7 @@ export class EditorComponent implements OnInit {
   // Operations=[
   //   'Functions','Logical','Fields'
   // ]
-  expression: string ="";
+
 
   
 
@@ -47,6 +49,11 @@ export class EditorComponent implements OnInit {
     debugger;
     this.GetOperatorString();
     this.GetOperationName("");
+
+    this.form = this.fb.group({
+
+      expression: []
+    });
    
   }
 
@@ -117,8 +124,11 @@ export class EditorComponent implements OnInit {
   }
 
   onclose(){
-    alert(this.expression)
-    sessionStorage.setItem("expression",this.expression);
+   debugger;
+  let uu=this.expression;
+      sessionStorage.setItem("expression",this.expression);
+     
+   
   }
   LoadProductField(ProductID:any){
     this.webApiService.LoadProductField(ProductID).subscribe((result:any) =>{
