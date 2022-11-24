@@ -13,7 +13,8 @@ export class EditorComponent implements OnInit {
   fields:any;
   Operations:any;
   Operators:any=[];
-  expression: any ="";
+  expression:any;
+
   constructor(private webApiService:DataserviceService,private fb: FormBuilder,private Router:Router,private renderer:Renderer2) {
    
   }
@@ -73,6 +74,7 @@ export class EditorComponent implements OnInit {
     inputhtml.value = (before + event + after)
     inputhtml.selectionStart = inputhtml.selectionEnd = start + event.length
     inputhtml.focus()
+    localStorage.setItem("expressionvalue",inputhtml.value);
 
 
 // if(this.expression==""){
@@ -122,11 +124,12 @@ export class EditorComponent implements OnInit {
     this.onInput(myinput,event);
     
   }
-
   onclose(){
-   debugger;
-  let uu=this.expression;
-      sessionStorage.setItem("expression",this.expression);
+ debugger;
+ let gg=localStorage.getItem("expressionvalue");
+ 
+  //let uu1=this.form.value.expression;
+      //sessionStorage.setItem("expression",this.expression);
      
    
   }
