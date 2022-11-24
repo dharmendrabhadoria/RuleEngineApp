@@ -93,8 +93,11 @@ export class EditorComponent implements OnInit {
    //this.onInput(num1,this.expression)
   }
 
-  OpClick(data:any){
-    this.expression = this.expression + data;
+  OpClick(myinput:any,event:any){
+    //this.expression = this.expression + data;
+   // this.expression = this.expression + event;
+    this.onInput(myinput,event);
+    
   }
 
   onclose(){

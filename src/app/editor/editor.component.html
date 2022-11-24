@@ -17,7 +17,7 @@
     </mat-card-content>
     <span>
       <ng-container *ngFor="let op of Operators">
-        <label (click)="OpClick(op)" class="lb">{{op}}</label>
+        <label (click)="OpClick(myinput,op)" class="lb">{{op}}</label>
       </ng-container>
     </span>
     <div class="container">
