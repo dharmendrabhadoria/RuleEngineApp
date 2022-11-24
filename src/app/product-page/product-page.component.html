@@ -34,10 +34,10 @@
                      <td style="display:none">id</td>
                      <td>ProductName</td>
                      <td>Field Name</td>
-                     <td>type</td>
+                     <td>Type</td>
                      <td>Description</td>
-                     <td>CreatedBy</td>
-                     <td>Created Date</td>
+                     <td style="display:none;">CreatedBy</td>
+                     <td style="display:none;">Created Date</td>
                     </tr>
                    
                   </thead>
@@ -76,12 +76,12 @@
                            
                           </td>
 
-                          <td>
+                          <td style="display:none;">
                             {{vas.CreatedBy}}
                            
                           </td>
 
-                          <td>
+                          <td style="display:none;">
                             {{vas.CreatedDate}}
                            
                           </td>
@@ -113,11 +113,11 @@
                      <td style="display:none">id</td>
                      <td>ProductName</td>
                      <td>Field Name</td>
-                     <td>type</td>
+                     <td>Type</td>
                      <td>Description</td>
-                     <td>Formula</td>
-                     <td>CreatedBy</td>
-                     <td>Created Date</td>
+                     <td style="display:none;">Formula</td>
+                     <td style="display:none;">CreatedBy</td>
+                     <td style="display:none;">Created Date</td>
                      <td>Action</td>
                     </tr>                   
                   </thead>
@@ -151,15 +151,15 @@
                         {{f.Formula}}
                       </td>
 
-                      <td>
+                      <td style="display:none;">
                         {{f.CreatedBy}}
                       </td>
 
-                      <td>
+                      <td style="display:none;">
                         {{f.CreateDate}}
                       </td>
                       <td>
-                        <button mat-list-item class="btn" (click)="openDialog()"> Generate </button>
+                        <button mat-list-item class="btn" (click)="openDialog()"> Add </button>
                     
                       </td>
                     </tr>
