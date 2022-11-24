@@ -93,27 +93,86 @@
           </mat-card>
             
         </div>
+       
+    </div>
+    </mat-tab>
+    <mat-tab label="Decision"> 
+      <div style="padding:25px;">
+      
+      
         <div>
             <mat-card>
                 <mat-label style="padding-right:20px;">List of Policy Benefits Fields    :</mat-label> 
-                <mat-nav-list>
-                    <mat-list-item *ngFor="let f of Benefits; let i =index">
-                        <h3 matLine>Name: {{f.name}}</h3>
-                        <p matLine>FieldType: {{f.FieldType}}</p>
-                        <p matLine>Purpose: {{f.Purpose}}</p>
-                        <p matLine>Formula: {{f.Formula}}</p>
-                       <mat-action-list>
+              
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                     <td style="display:none">BFFMID</td>
+        
+                     <td style="display:none">ProductID</td>
+                     <td style="display:none">id</td>
+                     <td>ProductName</td>
+                     <td>Field Name</td>
+                     <td>type</td>
+                     <td>Description</td>
+                     <td>Formula</td>
+                     <td>CreatedBy</td>
+                     <td>Created Date</td>
+                     <td>Action</td>
+                    </tr>                   
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let f of Benefits; let i =index">
+                      <td style="display:none">
+                        {{f.BFFMID}}
+                      </td>
+                      <td style="display:none">
+                        {{f.ProductID}}
+                      </td>
+                      <td style="display:none">
+                        {{f.id}}
+                      </td>
+
+                      <td>
+                        {{f.ProductName}}
+                      </td>
+
+                       <td>
+                        {{f.name}}
+                      </td>
+                      <td>
+                        {{f.FieldType}}
+                      </td>
+
+                      <td>
+                        {{f.Purpose}}
+                      </td>
+                      <td>
+                        {{f.Formula}}
+                      </td>
+
+                      <td>
+                        {{f.CreatedBy}}
+                      </td>
+
+                      <td>
+                        {{f.CreateDate}}
+                      </td>
+                      <td>
                         <button mat-list-item class="btn" (click)="openDialog()"> Generate </button>
-                      </mat-action-list>
-                      
-                    </mat-list-item>
-                  </mat-nav-list>
+                    
+                      </td>
+                    </tr>
+                  </tbody>
+              
+                </table>
+                
                 
             </mat-card>
         </div>
     </div>
+    
     </mat-tab>
-    <mat-tab label="Decision"> Content 2 </mat-tab>
     <mat-tab label="Generate"> Content 3 </mat-tab>
   </mat-tab-group>
 
