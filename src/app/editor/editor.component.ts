@@ -112,6 +112,7 @@ export class EditorComponent implements OnInit {
   doubleClick(myinput:any,event:any){
     debugger;
     
+    
    //this.expression = this.expression + event;
 
    this.onInput(myinput,event);
