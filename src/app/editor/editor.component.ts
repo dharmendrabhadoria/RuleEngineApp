@@ -1,12 +1,22 @@
-import { Component, OnInit } from '@angular/core';
 
+import { Component, OnInit,Renderer2 ,ViewChild,ElementRef } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { DataserviceService } from '../services/dataservice.service';
 @Component({
   selector: 'app-editor',
   templateUrl: './editor.component.html',
   styleUrls: ['./editor.component.css']
 })
 export class EditorComponent implements OnInit {
+  fields:any;
+  Operations:any;
+  constructor(private webApiService:DataserviceService,private fb: FormBuilder,private Router:Router,private renderer:Renderer2) {
+   
+  }
 
+  
+  
   // fields:any= [
   //   { 'ID': '1' ,'Name': 'RCD'},
   //   { 'ID': '2' ,'Name': 'PTD'},
@@ -15,7 +25,7 @@ export class EditorComponent implements OnInit {
   //   { 'ID': '5' ,'Name': 'Term'},
   //   { 'ID': '5' ,'Name': 'Surrender/Death Date'},
   // ]
-  fields:any= [];
+  //fields:any= [];
   links = [
     'Google',
     'Linkedin',
@@ -25,13 +35,15 @@ export class EditorComponent implements OnInit {
     '+','-','*','/','%','>=','<=','==','===','!=' ,'>','<'
   ]
 
-  Operations=[
-    'Functions','Logical','Fields'
-  ]
+  // Operations=[
+  //   'Functions','Logical','Fields'
+  // ]
   expression: string ="";
-  constructor() { }
+
+  
 
   ngOnInit(): void {
+    this.GetOperationName("");
   }
 
   modelChangeFn(value:any) {
@@ -104,36 +116,63 @@ export class EditorComponent implements OnInit {
     alert(this.expression)
     sessionStorage.setItem("expression",this.expression);
   }
+  LoadProductField(ProductID:any){
+    this.webApiService.LoadProductField(ProductID).subscribe((result:any) =>{
+      debugger;
+      this.fields=result;
+   
+    });
+  }
 
+
+  GetOperationName(OperationType:any){
+    this.webApiService.GetOperationName(OperationType).subscribe((result:any) =>{
+      debugger;
+      this.Operations=result;
+   
+    });
+  }
+
+  GetOperationFunctionName(OperationType:any){
+    this.webApiService.GetOperationName(OperationType).subscribe((result:any) =>{
+      debugger;
+      this.fields=result;
+   
+    });
+  }
   OprClick(data:any){
     debugger;
     if(data =='Fields'){
     let ProductID=  sessionStorage.getItem("ProductID");
-       this.fields =[];
-       this.fields.push(
-        { 'ID': '1' ,'Name': 'RCD'},
-        { 'ID': '2' ,'Name': 'PTD'},
-        { 'ID': '3' ,'Name': 'SA'},
-        { 'ID': '4' ,'Name': 'PPT'},
-        { 'ID': '5' ,'Name': 'Term'},
-        { 'ID': '5' ,'Name': 'Surrender/Death Date'}
-       )
+      //  this.fields =[];
+      //  this.fields.push(
+      //   { 'ID': '1' ,'Name': 'RCD'},
+      //   { 'ID': '2' ,'Name': 'PTD'},
+      //   { 'ID': '3' ,'Name': 'SA'},
+      //   { 'ID': '4' ,'Name': 'PPT'},
+      //   { 'ID': '5' ,'Name': 'Term'},
+      //   { 'ID': '5' ,'Name': 'Surrender/Death Date'}
+      //  )
+      this.LoadProductField(ProductID);
     }else if(data == 'Functions'){
-      this.fields =[];
-      this.fields.push(
-        {'Name': 'Avg'}, {'Name': 'Count'},
-        {'Name': 'Min'}, {'Name': 'Min'},
-        {'Name': 'Sum'}, {'Name': 'GetDate'},
-        {'Name': 'Sum'}, {'Name': 'GetDate'},
-        {'Name': 'GetDayOfYear'}, {'Name': 'DateDiff(M)'},
-        {'Name': 'DateDiff(Y)'}, {'Name': 'DateDiff(D)'},
-      )
+      // this.fields =[];
+      // this.fields.push(
+      //   {'Name': 'Avg'}, {'Name': 'Count'},
+      //   {'Name': 'Min'}, 
+      //   {'Name': 'Sum'}, {'Name': 'GetDate'},
+      
+      //   {'Name': 'GetDayOfYear'}, {'Name': 'DateDiff(M)'},
+      //   {'Name': 'DateDiff(Y)'}, {'Name': 'DateDiff(D)'},
+      // )
+
+      this.GetOperationFunctionName("Functions");
     }else if(data == 'Logical'){
-      this.fields =[];
-      this.fields.push(
-        {'Name': 'Iif'}, {'Name': 'IsNull'},
-        {'Name': 'IsNullOrEmpty'}
-      )
+      // this.fields =[];
+      // this.fields.push(
+      //   {'Name': 'Iif'}, {'Name': 'IsNull'},
+      //   {'Name': 'IsNullOrEmpty'}
+      // )
+      this.GetOperationFunctionName("Logical");
     }
     else{
       this.fields =[];

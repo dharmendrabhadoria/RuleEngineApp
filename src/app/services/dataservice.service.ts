@@ -24,8 +24,18 @@ public insertBenificiaryFieldMaster(strtxtBenificiaryFieldName:any,strtxtBenific
   strtxtBenificiaryType+"&strtxtBenificiaryFieldPurpose="+
   strtxtBenificiaryFieldPurpose+"&strtxtBenificiaryFieldFormula="+strtxtBenificiaryFieldFormula+"&strCreatedBy="+strCreatedBy);
 }
+public GetOperationFunctionName(OperationType:any){
+  return  this.httpClient.get(environment.apiURL+"GetOperationName?OperationType="+OperationType)
 
+}
+public GetOperationName(OperationType:any){
+  return  this.httpClient.get(environment.apiURL+"GetOperationName?OperationType="+OperationType)
 
+}
+public LoadProductField(ProductID:any){
+  return  this.httpClient.get(environment.apiURL+"GetProductFiledForFormulaCreation?ProductID="+ProductID)
+
+}
   public InsertFieldMaster(strtxtFieldName:any,strtxtType:any,
     strtxtDescription:any,strCreatedBy:any){
     return  this.httpClient.get(environment.apiURL+"InsertFieldMaster?strtxtFieldName="+strtxtFieldName+"&strtxtType="+
