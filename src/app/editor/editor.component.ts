@@ -108,6 +108,7 @@ export class EditorComponent implements OnInit {
   OprClick(data:any){
     debugger;
     if(data =='Fields'){
+    let ProductID=  sessionStorage.getItem("ProductID");
        this.fields =[];
        this.fields.push(
         { 'ID': '1' ,'Name': 'RCD'},

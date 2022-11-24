@@ -33,6 +33,7 @@ export class ProductPageComponent implements OnInit {
     openDialog(ProductID:any,event:any) {
       debugger;
       console.log(ProductID);
+      sessionStorage.setItem("ProductID",ProductID);
       const dialogRef = this.dialog.open(EditorComponent,{
         height: '80%',
         width: '60%',
