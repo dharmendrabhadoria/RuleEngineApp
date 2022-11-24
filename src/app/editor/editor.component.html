@@ -1,5 +1,6 @@
 
 <form class="" [formGroup]="form">
+ 
 <mat-card>
     <mat-card-title>
         Expression editor
@@ -13,7 +14,7 @@
 
     <mat-card-content style="margin:0px;">
         <mat-form-field style="width:100%;" class="example-full-width" appearance="fill">
-            <textarea matInput #myinput [ngModel]="expression" (ngModelChange)="modelChangeFn($event)" id="expression" formControlName="expression">{{expression}}</textarea>
+            <textarea matInput #myinput [(ngModel)]="expression" (ngModelChange)="modelChangeFn($event)"  formControlName="expression">{{expression}}</textarea>
          
           </mat-form-field>
     </mat-card-content>
@@ -21,6 +22,7 @@
       <ng-container *ngFor="let op of Operators">
         <label (click)="OpClick(myinput,op)" class="lb">{{op}}</label>
       </ng-container>
+      
     </span>
     <div class="container">
         <div class="row">
