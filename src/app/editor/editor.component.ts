@@ -106,6 +106,7 @@ export class EditorComponent implements OnInit {
   }
 
   OprClick(data:any){
+    debugger;
     if(data =='Fields'){
        this.fields =[];
        this.fields.push(
