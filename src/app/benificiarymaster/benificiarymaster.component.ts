@@ -12,8 +12,9 @@ export class BenificiarymasterComponent implements OnInit {
 
   form!: FormGroup;submitted = false;
   dataSource:any;
+  //displayedColumns:string[]=['BenificiaryID','BenificiaryName','FieldType','FieldPurpose','FormulaToDriveData','CreatedBy','CreatedDate'];
   displayedColumns:string[]=['BenificiaryID','BenificiaryName','FieldType','FieldPurpose','FormulaToDriveData','CreatedBy','CreatedDate'];
-  //public gridOptions!: AgGridAngular;
+ 
   constructor(private webApiService:DataserviceService,private fb: FormBuilder,private Router:Router,private renderer:Renderer2) {
    
   }
