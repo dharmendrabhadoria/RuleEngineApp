@@ -26,7 +26,7 @@
             <mat-card class="card">
                   <mat-nav-list>
                     <ng-container *ngFor="let op of Operations" class="example-item">
-                        <a mat-list-item href="javascript:void(0)" (click)="OprClick(op)"> {{op}} </a> 
+                        <a mat-list-item href="javascript:void(0)" (click)="OprClick(op.FunType)"> {{op.FunType}} </a> 
                     </ng-container>
                 </mat-nav-list>
             </mat-card>
