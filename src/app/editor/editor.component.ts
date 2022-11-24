@@ -35,10 +35,62 @@ export class EditorComponent implements OnInit {
   }
 
   modelChangeFn(value:any) {
+    debugger;
     this.expression = value;
   }
-  doubleClick(event:any){
-    this.expression = this.expression + event;
+
+  onInput(inputhtml:any,event:any): void {
+    debugger;
+
+    const start = inputhtml.selectionStart
+    const end = inputhtml.selectionEnd;
+    const text = inputhtml.value
+    const before = text.substring(0, start)
+    const after  = text.substring(end, text.length)
+    inputhtml.value = (before + event + after)
+    inputhtml.selectionStart = inputhtml.selectionEnd = start + event.length
+    inputhtml.focus()
+
+
+// if(this.expression==""){
+//   this.expression=event;
+// }
+//     else{
+//       var cursorPos = inputhtml.selectionStart;//$('#text').prop('selectionStart');
+//     var v =inputhtml.value;// $('#text').val();
+//     var textBefore = v.substring(0,  cursorPos);
+//     var textAfter  = v.substring(cursorPos, v.length);
+//     if(cursorPos==0){
+//       this.expression=event + textAfter;
+//     }
+// else{
+//   this.expression=textBefore + v + textAfter;
+// }
+   
+//     }
+    //get the actual position of the cursor
+    //let pos=inputhtml.selectionStart;
+
+   // let eos=inputhtml.selectionEnd;
+    
+   // let textplacepos =this.expression.substring(0, pos);
+   //let Actualtextpos= this.expression.substring(eos, this.expression.length);
+    // let vv= this.expression.substring(0, pos)
+    //         + event
+    //         + this.expression.substring(eos, this.expression.length);
+    //         this.expression =vv;
+
+    //get the characteres not digit before change:
+   
+
+  }
+  doubleClick(myinput:any,event:any){
+    debugger;
+    
+   //this.expression = this.expression + event;
+
+   this.onInput(myinput,event);
+   //this.onInput(num1,this.expression)
   }
 
   OpClick(data:any){
