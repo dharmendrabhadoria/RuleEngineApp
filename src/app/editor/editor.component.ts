@@ -11,6 +11,7 @@ import { DataserviceService } from '../services/dataservice.service';
 export class EditorComponent implements OnInit {
   fields:any;
   Operations:any;
+  Operators:any=[];
   constructor(private webApiService:DataserviceService,private fb: FormBuilder,private Router:Router,private renderer:Renderer2) {
    
   }
@@ -31,9 +32,9 @@ export class EditorComponent implements OnInit {
     'Linkedin',
     'Twitter'
   ]
-  Operators =[
-    '+','-','*','/','%','>=','<=','==','===','!=' ,'>','<'
-  ]
+  // Operators =[
+  //   '+','-','*','/','%','>=','<=','==','===','!=' ,'>','<'
+  // ]
 
   // Operations=[
   //   'Functions','Logical','Fields'
@@ -43,7 +44,10 @@ export class EditorComponent implements OnInit {
   
 
   ngOnInit(): void {
+    debugger;
+    this.GetOperatorString();
     this.GetOperationName("");
+   
   }
 
   modelChangeFn(value:any) {
@@ -129,6 +133,13 @@ export class EditorComponent implements OnInit {
     this.webApiService.GetOperationName(OperationType).subscribe((result:any) =>{
       debugger;
       this.Operations=result;
+   
+    });
+  }
+  GetOperatorString(){
+    this.webApiService.GetOperatorString().subscribe((result:any) =>{
+      debugger;
+      this.Operators=result;
    
     });
   }

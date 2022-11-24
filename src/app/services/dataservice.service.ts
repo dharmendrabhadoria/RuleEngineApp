@@ -28,6 +28,10 @@ public GetOperationFunctionName(OperationType:any){
   return  this.httpClient.get(environment.apiURL+"GetOperationName?OperationType="+OperationType)
 
 }
+public GetOperatorString(){
+  return  this.httpClient.get(environment.apiURL+"GetOperatorString");
+
+}
 public GetOperationName(OperationType:any){
   return  this.httpClient.get(environment.apiURL+"GetOperationName?OperationType="+OperationType)
 
