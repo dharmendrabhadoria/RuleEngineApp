@@ -10,7 +10,7 @@
                     <option *ngFor="let p of Product"  [value]="p.id"> {{p.productName}}</option>
                 </select> -->
                 <mat-select   placeholder="Select product" (selectionChange)="onProductChange($event.value,$event)">
-                    <mat-option [(ngModel)]="selecteddata"   *ngFor="let p of Product let i =index" [value]="p.ProductID" >{{p.ProductName}}</mat-option>
+                    <mat-option    *ngFor="let p of Product let i =index" [value]="p.ProductID" >{{p.ProductName}}</mat-option>
                 </mat-select>
             </mat-form-field>
         </div>

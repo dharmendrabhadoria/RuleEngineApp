@@ -14,7 +14,7 @@ export class ProductPageComponent implements OnInit {
     Product :any = [];
     ProductDetailsList :any =[];
     demo1TabIndex:any;
-    selecteddata:any;
+    selecteddata:any="";
     Fields:any = [] ;   
     Benefits:any = [];
 
@@ -59,7 +59,11 @@ export class ProductPageComponent implements OnInit {
         
 
 
-        this.selecteddata= ProductID;  
+        //this.selecteddata= ProductID; 
+        
+        /* Call Api for  insert Benifit field formual*/
+
+        /* End This Calling part*/
 
         this.service.GetRulesProductInfo(ProductID).subscribe((res:any) => {
           // this.ProductDetailsList = res;  

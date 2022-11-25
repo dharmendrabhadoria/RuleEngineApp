@@ -16,11 +16,14 @@ export class EditorComponent implements OnInit {
   Operators:any=[];
   expression:any;
 
+  // constructor(private webApiService:DataserviceService,private fb: FormBuilder,private Router:Router,private renderer:Renderer2
+  //   , public dialogRef: MatDialogRef<EditorComponent>) {
+   
+  // }
   constructor(private webApiService:DataserviceService,private fb: FormBuilder,private Router:Router,private renderer:Renderer2
-    , public dialogRef: MatDialogRef<EditorComponent>,) {
+    , public dialogRef: MatDialogRef<EditorComponent>) {
    
   }
-
   
   
   // fields:any= [
