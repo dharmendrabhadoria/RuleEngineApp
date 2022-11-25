@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -81,4 +81,23 @@ public LoadProductField(ProductID:any){
    GetBenificiaryFieldInfo(){
     return  this.httpClient.post(environment.apiURL+"FetchBenificiaryFieldInfo",null)
    }
+
+
+   
+
+   Pnb_benifit_formula(obj:any){
+
+
+    var data = new FormData();
+data.append("ProductID", obj.ProductID);
+data.append("FieldID",obj.FieldID );
+data.append("Formula",obj.Formula );
+data.append("CreatedBy",obj.CreatedBy );
+    let Formula=(obj.Formula).replace("+","_");
+    return  this.httpClient.post(environment.apiURL+"Pnb_benifit_formula",data)
+  
+    //return  this.httpClient.get(environment.apiURL+"Pnb_benifit_formula1?ProductID="+obj.ProductID+"&FieldID="+obj.FieldID+"&Formula="+Formula+"&CreatedBy="+obj.CreatedBy)
+   }
+   
 }
+

@@ -214,10 +214,23 @@ export class EditorComponent implements OnInit {
         let FieldID=  sessionStorage.getItem("FieldID");
     let GetFormulaExpression=localStorage.getItem("expressionvalue");
     localStorage.setItem("TabIndex","1");
+    let dd={
+      ProductID:ProductID,
+      FieldID:FieldID,
+      Formula:GetFormulaExpression,
+      CreatedBy:"dds"
+    }
 
   /*  close  model popup   */
  if(GetFormulaExpression!=""){
-   this.dialogRef.close();
+
+  this.webApiService.Pnb_benifit_formula(dd).subscribe((result:any) =>{
+    debugger;
+    alert(result[0].Msg);
+    this.dialogRef.close();
+ 
+  });
+  
 
    
  }
