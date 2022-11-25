@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BenificiarymasterComponent } from './benificiarymaster/benificiarymaster.component';
+
+import { BenifimasterComponent } from './benifimaster/benifimaster.component';
 import { EditorComponent } from './editor/editor.component';
 import { FieldmasterComponent } from './fieldmaster/fieldmaster.component';
 import { ProductPageComponent } from './product-page/product-page.component';
@@ -14,7 +15,7 @@ const routes: Routes = [
   { path: 'editor', component: EditorComponent},
   {path:"productmapinfo",component:ProductmapinfoComponent},
   {path:"fieldmaster",component:FieldmasterComponent},
-  {path:"benificiarymaster",component:BenificiarymasterComponent},
+  {path:"benifitmaster",component:BenifimasterComponent},
   {path:"productmap",component:ProductmapComponent}
 ];
 

@@ -1,0 +1,94 @@
+<form class="" [formGroup]="form"> 
+    <div class="row">
+    <div class="col-sm-6">
+      <mat-label style="padding-right:48px;">Benifit Name :</mat-label>
+      <mat-form-field style="width:50%;">
+        
+          <input matInput placeholder="Benifit Name" id="txtBenificiaryFieldName" formControlName="txtBenificiaryFieldName">
+          
+      </mat-form-field>
+    </div>
+    <div class="col-sm-6">
+      <mat-label style="padding-right:50px;">Benifit Type </mat-label>
+    
+      <mat-form-field style="width:50%;">
+       
+        <input matInput placeholder="Benifit Type" id="txtBenificiaryType" formControlName="txtBenificiaryType">
+      </mat-form-field>
+    </div>
+    
+    
+    <div style="width: 50%; float: left;">
+      <mat-label style="padding-right:50px;">Benifit Purpose</mat-label>
+      <mat-form-field style="width:50%;">
+       
+        <input matInput placeholder="Benifit Purpose" id="txtBenificiaryFieldPurpose" formControlName="txtBenificiaryFieldPurpose">
+      </mat-form-field>
+    </div>
+    
+    <div style="width: 50%; float: left;">
+      <mat-label style="padding-right:50px;">Benifit Formula to Drive</mat-label>
+      <mat-form-field style="width:50%;">
+           
+        <input matInput placeholder="Benifit Formula to Drive" id="txtBenificiaryFieldFormula" formControlName="txtBenificiaryFieldFormula">
+      </mat-form-field>
+    </div>
+    
+    </div>
+          <button mat-button class="btn btn-primary" (click)="SaveBenificiaryFieldMaster()">Save</button>
+     
+         <div class="scrollinfo">
+          <table mat-table [dataSource]="dataSource" class="table table-bordered">
+    
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="BenifitID">
+              <th mat-header-cell *matHeaderCellDef> BenifitID </th>
+              <td mat-cell *matCellDef="let element"> {{element.BenificiaryID}} </td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="BenifitName">
+              <th mat-header-cell *matHeaderCellDef> BenifitName </th>
+              <td mat-cell *matCellDef="let element"> {{element.BenificiaryName}} </td>
+            </ng-container>
+          
+    
+    
+            <ng-container matColumnDef="FieldType">
+              <th mat-header-cell *matHeaderCellDef> FieldType </th>
+              <td mat-cell *matCellDef="let element"> {{element.FieldType}} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="FieldPurpose">
+              <th mat-header-cell *matHeaderCellDef> FieldPurpose </th>
+              <td mat-cell *matCellDef="let element"> {{element.FieldPurpose}} </td>
+            </ng-container>
+    
+    
+            <ng-container matColumnDef="FormulaToDriveData" style="display:none;">
+              <th mat-header-cell *matHeaderCellDef style="display:none;"> FormulaToDriveData </th>
+              <td mat-cell *matCellDef="let element" style="display:none;"> {{element.FormulaToDriveData}} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="CreatedBy" style="display:none;">
+              <th mat-header-cell *matHeaderCellDef style="display:none;"> CreatedBy </th>
+              <td mat-cell *matCellDef="let element" style="display:none;"> {{element.CreatedBy}} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="CreatedDate" style="display:none;">
+              <th mat-header-cell *matHeaderCellDef style="display:none;"> CreatedDate </th>
+              <td mat-cell *matCellDef="let element" style="display:none;"> {{element.CreatedDate}} </td>
+            </ng-container>
+            <!-- Symbol Column -->
+            
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+     

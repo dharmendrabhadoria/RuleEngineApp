@@ -14,10 +14,11 @@ import { ProductmapinfoComponent } from './productmapinfo/productmapinfo.compone
 
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { FieldmasterComponent } from './fieldmaster/fieldmaster.component';
-import { BenificiarymasterComponent } from './benificiarymaster/benificiarymaster.component';
+
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { ProductmapComponent } from './productmap/productmap.component';
+import { BenifimasterComponent } from './benifimaster/benifimaster.component';
 
 
 @NgModule({
@@ -27,8 +28,8 @@ import { ProductmapComponent } from './productmap/productmap.component';
     EditorComponent,
     ProductmapinfoComponent,
     FieldmasterComponent,
-    BenificiarymasterComponent,
-    ProductmapComponent
+    ProductmapComponent,
+    BenifimasterComponent
    
   ],
   imports: [

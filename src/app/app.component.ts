@@ -33,8 +33,8 @@ export class AppComponent {
     this.route.navigate([newLocal])
   }
 
-  BenificiaryFieldMaster(){
-    this.route.navigate(['benificiarymaster'])
+  BenifitFieldMaster(){
+    this.route.navigate(['benifitmaster'])
   }
 
   ProductMap(){
