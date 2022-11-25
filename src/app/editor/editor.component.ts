@@ -208,13 +208,15 @@ export class EditorComponent implements OnInit {
   SaveFormula(){
     debugger;
     let ProductID=  sessionStorage.getItem("ProductID");
-    let FieldID=  sessionStorage.getItem("FieldID");
+        let FieldID=  sessionStorage.getItem("FieldID");
     let GetFormulaExpression=localStorage.getItem("expressionvalue");
     localStorage.setItem("TabIndex","1");
 
   /*  close  model popup   */
  if(GetFormulaExpression!=""){
    this.dialogRef.close();
+
+   
  }
  else{
   alert("Please create formula")

@@ -14,7 +14,7 @@ export class ProductPageComponent implements OnInit {
     Product :any = [];
     ProductDetailsList :any =[];
     demo1TabIndex:any;
-  
+    selecteddata:any;
     Fields:any = [] ;   
     Benefits:any = [];
 
@@ -25,9 +25,11 @@ export class ProductPageComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    debugger;
     this.BindProducts();
     this.BindProductDetails();
     this.demo1TabIndex=0;
+    this.selecteddata="Select product";
   }
 
     /*checkbox change event*/
@@ -50,6 +52,22 @@ export class ProductPageComponent implements OnInit {
         debugger;
         console.log(`Dialog result: ${result}`);
         this.demo1TabIndex=localStorage.getItem("TabIndex");
+        let ProductID=  sessionStorage.getItem("ProductID");
+        let FieldID=  sessionStorage.getItem("FieldID");
+        let GetFormulaExpression=localStorage.getItem("expressionvalue");
+        localStorage.setItem("TabIndex","1");
+        
+
+
+        this.selecteddata= ProductID;  
+
+        this.service.GetRulesProductInfo(ProductID).subscribe((res:any) => {
+          // this.ProductDetailsList = res;  
+            this.Fields = res.policyDetailsFields;
+         this.Benefits = res.policyBenefitFields; 
+        
+         });
+
       });
     }
 
