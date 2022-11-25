@@ -1,6 +1,7 @@
 
 import { Component, OnInit,Renderer2 ,ViewChild,ElementRef } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { DataserviceService } from '../services/dataservice.service';
 @Component({
@@ -15,7 +16,8 @@ export class EditorComponent implements OnInit {
   Operators:any=[];
   expression:any;
 
-  constructor(private webApiService:DataserviceService,private fb: FormBuilder,private Router:Router,private renderer:Renderer2) {
+  constructor(private webApiService:DataserviceService,private fb: FormBuilder,private Router:Router,private renderer:Renderer2
+    , public dialogRef: MatDialogRef<EditorComponent>,) {
    
   }
 
@@ -203,5 +205,21 @@ export class EditorComponent implements OnInit {
       this.fields =[];
     }
   }
+  SaveFormula(){
+    debugger;
+    let ProductID=  sessionStorage.getItem("ProductID");
+    let FieldID=  sessionStorage.getItem("FieldID");
+    let GetFormulaExpression=localStorage.getItem("expressionvalue");
+    localStorage.setItem("TabIndex","1");
 
+  /*  close  model popup   */
+ if(GetFormulaExpression!=""){
+   this.dialogRef.close();
+ }
+ else{
+  alert("Please create formula")
+ }
+
+  /*End this line */
+  }
 }

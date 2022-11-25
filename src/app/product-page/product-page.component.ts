@@ -13,35 +13,43 @@ export class ProductPageComponent implements OnInit {
    price:number = 25.00;
     Product :any = [];
     ProductDetailsList :any =[];
+    demo1TabIndex:any;
   
     Fields:any = [] ;   
     Benefits:any = [];
 
   constructor(public dialog: MatDialog,private service:DataserviceService) {
-    
+    localStorage.setItem("expressionvalue","")
+     sessionStorage.setItem("ProductID","");
+     sessionStorage.setItem("FieldID","");
    }
 
   ngOnInit(): void {
     this.BindProducts();
     this.BindProductDetails();
+    this.demo1TabIndex=0;
   }
 
     /*checkbox change event*/
     onChange(event:any) {
       console.log(event)
     }
-    openDialog(ProductID:any,event:any) {
+    openDialog(FieldID:any,ProductID:any,event:any) {
       debugger;
       console.log(ProductID);
       sessionStorage.setItem("ProductID",ProductID);
+      sessionStorage.setItem("FieldID",FieldID);
       const dialogRef = this.dialog.open(EditorComponent,{
         height: '80%',
         width: '60%',
         disableClose: true
+        
       });
   
       dialogRef.afterClosed().subscribe(result => {
+        debugger;
         console.log(`Dialog result: ${result}`);
+        this.demo1TabIndex=localStorage.getItem("TabIndex");
       });
     }
 

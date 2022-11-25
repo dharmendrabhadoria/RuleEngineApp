@@ -1,6 +1,6 @@
 <!-- <h1 class="some">Formula Creation</h1> -->
 <!-- <input type="number"[(ngModel)]="price" placeholder="0.00"> -->
-<mat-tab-group>
+<mat-tab-group [(selectedIndex)]="demo1TabIndex">
     <mat-tab label="Facts"> 
     <div style="padding:25px;">
         <div>           
@@ -159,7 +159,7 @@
                         {{f.CreateDate}}
                       </td>
                       <td>
-                        <button mat-list-item class="btn" (click)="openDialog(f.ProductID,$event)"> Add </button>
+                        <button mat-list-item class="btn" (click)="openDialog(f.id,f.ProductID,$event)"> Add </button>
                     
                       </td>
                     </tr>
