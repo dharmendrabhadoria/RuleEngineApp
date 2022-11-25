@@ -59,7 +59,7 @@ export class ProductPageComponent implements OnInit {
         
 
 
-        //this.selecteddata= ProductID; 
+       
         
         /* Call Api for  insert Benifit field formual*/
 
