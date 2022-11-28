@@ -62,7 +62,7 @@ if(this.SelectProductMappingInfo.length==0){
   return false;
 }
 else if(this.SelectBenificiaryMappingInfo.length==0){
-  alert("Please select benificiary filed for mapping operation");
+  alert("Please select benifit filed for mapping operation");
   return false;
 }
    else{
