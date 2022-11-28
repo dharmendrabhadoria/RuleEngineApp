@@ -27,7 +27,7 @@ export class ProductPageComponent implements OnInit {
   ngOnInit(): void {
     debugger;
     this.BindProducts();
-    this.BindProductDetails();
+   // this.BindProductDetails();
     this.demo1TabIndex=0;
     this.selecteddata="Select product";
   }
@@ -84,17 +84,14 @@ export class ProductPageComponent implements OnInit {
       // });
     }
 
-    BindProductDetails(){
-      this.service.getProductDetailJSON().subscribe((res:any) => {
-        this.ProductDetailsList = res;      
-      });
+    // BindProductDetails(){
+    //   this.service.getProductDetailJSON().subscribe((res:any) => {
+    //     this.ProductDetailsList = res;      
+    //   });
 
-      // this.service.GetRulesProductInfo().subscribe((res:any) => {
-      //   debugger;
-      //   this.ProductDetailsList = res;      
-      // });
       
-    }
+      
+    // }
 
     onProductChange(value:any,event:any){
       debugger;
