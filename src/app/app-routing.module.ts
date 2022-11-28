@@ -6,14 +6,13 @@ import { EditorComponent } from './editor/editor.component';
 import { FieldmasterComponent } from './fieldmaster/fieldmaster.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { ProductmapComponent } from './productmap/productmap.component';
-import { ProductmapinfoComponent } from './productmapinfo/productmapinfo.component';
 
 // const routes: Routes = [];
 const routes: Routes = [
   { path: '', redirectTo: '/product', pathMatch: 'full' },
   { path: 'product', component: ProductPageComponent},
   { path: 'editor', component: EditorComponent},
-  {path:"productmapinfo",component:ProductmapinfoComponent},
+  
   {path:"fieldmaster",component:FieldmasterComponent},
   {path:"benifitmaster",component:BenifimasterComponent},
   {path:"productmap",component:ProductmapComponent}

@@ -10,7 +10,7 @@ import { DemoMaterialModule } from 'src/meterial-module';
 import { EditorComponent } from './editor/editor.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductmapinfoComponent } from './productmapinfo/productmapinfo.component';
+
 
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { FieldmasterComponent } from './fieldmaster/fieldmaster.component';
@@ -26,7 +26,7 @@ import { BenifimasterComponent } from './benifimaster/benifimaster.component';
     AppComponent,
     ProductPageComponent,
     EditorComponent,
-    ProductmapinfoComponent,
+    
     FieldmasterComponent,
     ProductmapComponent,
     BenifimasterComponent
