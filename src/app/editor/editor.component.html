@@ -53,8 +53,28 @@
           </div>
           <!-- <input type="button" value="Save Formula" (click)="SaveFormula()"> -->
           <button mat-button (click)="SaveFormula()" style="background-color:#005fa0;color: white;">SaveFormula</button>
-         
+                    
         </div>
       </div> 
 </mat-card>
 </form>
+
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content1">
+    <span class="close" (click)="Close()">x</span>
+    <div class="modal-header" >
+      <h4  id="modal-basic-title" >Open List</h4>
+    </div>
+    <div class="modal-body scrollinfo" id="dvid">
+        
+    </div>
+    <div class="modal-footer" >
+      <button type="button" class="btn btn-danger" data-bs-dismiss="modal" >Add</button>
+
+      <button type="button" class="btn btn-info"  (click)="Close()">Cancel</button>
+    </div>
+  </div>
+
+</div>

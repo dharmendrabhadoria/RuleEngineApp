@@ -118,9 +118,19 @@ export class EditorComponent implements OnInit {
     debugger;
     
     
+if(event=="PNB_GsvMonthlyDisFactor"|| event=="PNB_GSVrates" || event=="PNB_Reversionaryrates"||
+event=="PNB_SSVMonthlyFactor" || event=="PNB_Terminalrates"){
+  document.getElementById('myModal')?.setAttribute("style","display:block")
+}
+    
+    else{
+    
+    
+    
    //this.expression = this.expression + event;
 
    this.onInput(myinput,event);
+    }
    //this.onInput(num1,this.expression)
   }
 
@@ -242,5 +252,11 @@ export class EditorComponent implements OnInit {
  }
 
   /*End this line */
+  }
+  Close(){
+    document.getElementById('myModal')?.setAttribute("style","display:none")
+  }
+  openDialog(){
+    document.getElementById('myModal')?.setAttribute("style","display:block")
   }
 }
