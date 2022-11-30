@@ -19,7 +19,7 @@ export class AppComponent {
       $("#wrapper").toggleClass("toggled");
     });
   }
-
+  
   onroute(){
     this.route.navigate(['/productmapinfo']);
     

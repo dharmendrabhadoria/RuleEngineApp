@@ -123,6 +123,7 @@ export class EditorComponent implements OnInit {
   }
 
   GetBonusTableInfo(TableName:any){
+    
     this.webApiService.GetBonusTableInfo(TableName).subscribe((result:any) =>{
       debugger;
      
