@@ -68,7 +68,42 @@
       <h4  id="modal-basic-title" >Open List</h4>
     </div>
     <div class="modal-body scrollinfo" id="dvid">
-        
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th *ngFor="let head of items[0] | keys">{{ head }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items">
+            <td *ngFor="let list of item  | keys;let i=index;">{{ item[list] }}</td>
+          </tr>
+        </tbody>
+      </table>
+    
+        <!-- <table class="table table-bordered">
+          <thead>
+            <tr >
+
+              <td *ngFor="let vas of TableColumnsName; let i=index;">
+              
+                {{this.TableColumnsName[i].COLUMN_NAME}}
+              </td>
+
+              
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr *ngFor="let rowData of TableColumnsName;let i=index;">
+              <td *ngFor="let el of TableData;let j=index;">{{el[j][i]}}</td>
+          </tr>
+          
+          </tbody>
+        </table> -->
+
+      
     </div>
     <div class="modal-footer" >
       <button type="button" class="btn btn-danger" data-bs-dismiss="modal" >Add</button>

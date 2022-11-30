@@ -10,6 +10,13 @@ export class DataserviceService {
 
   constructor(private httpClient: HttpClient) { }
 
+
+  /* Bonus table Info*/
+  public GetBonusTableInfo(TableName:any){
+    return  this.httpClient.get(environment.apiURL+"GetBonusTableInfo?TableName="+TableName)
+  
+  }
+  /*End this part */
   /* Benifit Master Info*/
   public insertBenificiaryFieldMaster(strtxtBenificiaryFieldName:any,strtxtBenificiaryType:any,strtxtBenificiaryFieldPurpose:any,strtxtBenificiaryFieldFormula:any,strCreatedBy:any){
     return  this.httpClient.get(environment.apiURL+"insertBenificiaryFieldMaster?strtxtBenificiaryFieldName="+strtxtBenificiaryFieldName+

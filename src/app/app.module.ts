@@ -19,7 +19,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { ProductmapComponent } from './productmap/productmap.component';
 import { BenifimasterComponent } from './benifimaster/benifimaster.component';
-
+import { KeysPipe } from './keys.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,8 @@ import { BenifimasterComponent } from './benifimaster/benifimaster.component';
     
     FieldmasterComponent,
     ProductmapComponent,
-    BenifimasterComponent
+    BenifimasterComponent,
+    KeysPipe
    
   ],
   imports: [

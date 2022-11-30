@@ -2,6 +2,7 @@
 import { Component, OnInit,Renderer2 ,ViewChild,ElementRef } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { DataserviceService } from '../services/dataservice.service';
 @Component({
@@ -12,10 +13,13 @@ import { DataserviceService } from '../services/dataservice.service';
 export class EditorComponent implements OnInit {
   form!: FormGroup;submitted = false;
   fields:any;
-  Operations:any;
+  Operations:any;  
   Operators:any=[];
   expression:any;
-
+  TableColumnsName:any;
+  TableData:any=[];
+  items:any;
+  arrBirds:any= [];
   // constructor(private webApiService:DataserviceService,private fb: FormBuilder,private Router:Router,private renderer:Renderer2
   //   , public dialogRef: MatDialogRef<EditorComponent>) {
    
@@ -60,7 +64,8 @@ export class EditorComponent implements OnInit {
 
       expression: []
     });
-   
+    this.items = []
+      
   }
 
   modelChangeFn(value:any) {
@@ -114,6 +119,20 @@ export class EditorComponent implements OnInit {
    
 
   }
+
+  GetBonusTableInfo(TableName:any){
+    this.webApiService.GetBonusTableInfo(TableName).subscribe((result:any) =>{
+      debugger;
+     
+    
+
+    this.TableColumnsName=result.Table;
+  this.TableData=result.Table1;
+this.items=result.Table1;
+  
+   
+    });
+  }
   doubleClick(myinput:any,event:any){
     debugger;
     
@@ -121,6 +140,7 @@ export class EditorComponent implements OnInit {
 if(event=="PNB_GsvMonthlyDisFactor"|| event=="PNB_GSVrates" || event=="PNB_Reversionaryrates"||
 event=="PNB_SSVMonthlyFactor" || event=="PNB_Terminalrates"){
   document.getElementById('myModal')?.setAttribute("style","display:block")
+this.GetBonusTableInfo(event);
 }
     
     else{
