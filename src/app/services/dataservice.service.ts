@@ -49,7 +49,7 @@ data.append("ProductID", obj.ProductID);
 data.append("FieldID",obj.FieldID );
 data.append("Formula",obj.Formula );
 data.append("CreatedBy",obj.CreatedBy );
-  let Formula=(obj.Formula).replace("+","_");
+  
   return  this.httpClient.post(environment.apiURL+"Pnb_benifit_formula",data)
  }
   /*Editor Info End */
@@ -83,8 +83,20 @@ data.append("CreatedBy",obj.CreatedBy );
 
   /*Product Map  */
   SaveInfo(params:any){
-    return  this.httpClient.get(environment.apiURL+"SaveProductMappingInfo?paramsd="+params)
-   }
+    debugger;
+    (JSON.parse(params).BenificiaryStr);
+let y=JSON.stringify((JSON.parse(params).BenificiaryStr));
+let p=JSON.stringify((JSON.parse(params).Productstr));
+let d=JSON.stringify(JSON.parse(params).ProductID);
+    var data = new FormData();
+    data.append("BenificiaryStr", y);
+    data.append("Productstr",p);
+    data.append("ProductID",d);
+    
+  //   return  this.httpClient.get(environment.apiURL+"SaveProductMappingInfo?paramsd="+params)
+  return  this.httpClient.post(environment.apiURL+"SaveProductMappingInfo",data)
+ 
+}
    GetProductFieldInfo(){
     return  this.httpClient.post(environment.apiURL+"FetchProductFieldInfo",null)
    }

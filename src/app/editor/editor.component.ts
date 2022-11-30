@@ -204,6 +204,9 @@ export class EditorComponent implements OnInit {
       // )
       this.GetOperationFunctionName("Logical");
     }
+    else if(data=='Bonus'){
+      this.GetOperationFunctionName("Bonus");
+    }
     else{
       this.fields =[];
     }

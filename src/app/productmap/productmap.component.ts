@@ -66,6 +66,10 @@ else if(this.SelectBenificiaryMappingInfo.length==0){
   return false;
 }
    else{
+
+    // let BenificiaryStr=JSON.stringify(this.SelectBenificiaryMappingInfo);
+    //   let Productstr=JSON.stringify(this.SelectProductMappingInfo);
+    //  let  ProductID=this.form.value.ddlProduct;
     const apidata={
    
       BenificiaryStr:JSON.stringify(this.SelectBenificiaryMappingInfo),
