@@ -5,6 +5,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { DataserviceService } from '../services/dataservice.service';
+
 @Component({
   selector: 'app-editor',
   templateUrl: './editor.component.html',
@@ -24,7 +25,7 @@ export class EditorComponent implements OnInit {
   //   , public dialogRef: MatDialogRef<EditorComponent>) {
    
   // }
-  constructor(private webApiService:DataserviceService,private fb: FormBuilder,private Router:Router,private renderer:Renderer2
+  constructor( private webApiService:DataserviceService,private fb: FormBuilder,private Router:Router,private renderer:Renderer2
     , public dialogRef: MatDialogRef<EditorComponent>) {
    
   }
@@ -57,6 +58,7 @@ export class EditorComponent implements OnInit {
 
   ngOnInit(): void {
     debugger;
+   
     this.GetOperatorString();
     this.GetOperationName("");
 

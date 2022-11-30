@@ -21,6 +21,8 @@ import { ProductmapComponent } from './productmap/productmap.component';
 import { BenifimasterComponent } from './benifimaster/benifimaster.component';
 import { KeysPipe } from './keys.pipe';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +48,6 @@ import { KeysPipe } from './keys.pipe';
     HttpClientModule,
     MatInputModule,
     MatButtonModule
-  
   ],
   providers: [],
   bootstrap: [AppComponent]
